@@ -1,4 +1,4 @@
-export default class EventQueue<T = any> {
+export class EventQueue<T = any> {
 	_time: number;
 	_eventTimes: number[];
 	_events: T[];

@@ -1,9 +1,9 @@
-import Scheduler from "./scheduler.js";
+import { Scheduler } from "./scheduler";
 
 /**
  * @class Simple fair scheduler (round-robin style)
  */
-export default class Simple<T = any> extends Scheduler<T> {
+export class Simple<T = any> extends Scheduler<T> {
 	add(item: any, repeat: boolean) {
 		this._queue.add(item, 0);
 		return super.add(item, repeat);

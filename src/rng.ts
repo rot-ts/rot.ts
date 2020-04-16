@@ -5,7 +5,7 @@
 
 const FRAC = 2.3283064365386963e-10; /* 2^-32 */
 
-class RNG {
+class RngAlea {
 	_seed = 0;
 	_s0 = 0;
 	_s1 = 0;
@@ -145,9 +145,9 @@ class RNG {
 	 * Returns a cloned RNG
 	 */
 	clone() {
-		let clone = new RNG();
+		let clone = new RngAlea();
 		return clone.setState(this.getState());
 	}
 }
 
-export default new RNG().setSeed(Date.now());
+export const RNG = new RngAlea().setSeed(Date.now());

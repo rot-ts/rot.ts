@@ -1,10 +1,10 @@
-import Map, { CreateCallback } from "./map.js";
+import { Map, CreateCallback } from "./map";
 
 /**
  * @class Simple empty rectangular room
  * @augments ROT.Map
  */
-export default class Arena extends Map {
+export class Arena extends Map {
 	create(callback: CreateCallback) {
 		let w = this._width-1;
 		let h = this._height-1;

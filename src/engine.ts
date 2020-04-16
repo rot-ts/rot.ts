@@ -1,11 +1,11 @@
-import Scheduler from "./scheduler/scheduler.js";
+import { Scheduler } from "./scheduler/scheduler";
 
 /**
  * @class Asynchronous main loop
  * @param {ROT.Scheduler} scheduler
  */
 
-export default class Engine {
+export class Engine {
 	_scheduler: Scheduler;
 	_lock: number;
 

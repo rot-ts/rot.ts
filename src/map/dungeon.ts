@@ -1,11 +1,11 @@
-import Map from "./map.js";
-import { Room, Corridor } from "./features.js";
+import { Map } from "./map";
+import { Room, Corridor } from "./features";
 
 /**
  * @class Dungeon map: has rooms and corridors
  * @augments ROT.Map
  */
-export default abstract class Dungeon extends Map {
+export abstract class Dungeon extends Map {
 	_rooms: Room[];
 	_corridors: Corridor[];
 

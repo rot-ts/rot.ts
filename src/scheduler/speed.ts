@@ -1,4 +1,4 @@
-import Scheduler from "./scheduler.js";
+import { Scheduler } from "./scheduler";
 
 export interface SpeedActor {
 	getSpeed: () => number;
@@ -7,7 +7,7 @@ export interface SpeedActor {
 /**
  * @class Speed-based scheduler
  */
-export default class Speed<T extends SpeedActor = SpeedActor> extends Scheduler<T> {
+export class Speed<T extends SpeedActor = SpeedActor> extends Scheduler<T> {
 	/**
 	 * @param {object} item anything with "getSpeed" method
 	 * @param {bool} repeat

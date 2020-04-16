@@ -1,10 +1,10 @@
-import FOV, { VisibilityCallback } from "./fov.js";
+import { FOV, VisibilityCallback } from "./fov";
 
 /**
  * @class Discrete shadowcasting algorithm. Obsoleted by Precise shadowcasting.
  * @augments ROT.FOV
  */
-export default class DiscreteShadowcasting extends FOV {
+export class DiscreteShadowcasting extends FOV {
 	compute(x: number, y: number, R: number, callback: VisibilityCallback) {
 		/* this place is always visible */
 		callback(x, y, 0, 1);

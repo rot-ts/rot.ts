@@ -1,4 +1,4 @@
-import Path, { ComputeCallback, PassableCallback, Options } from "./path.js";
+import { Path, ComputeCallback, PassableCallback, Options } from "./path";
 
 interface Item {
 	x: number,
@@ -11,7 +11,7 @@ interface Item {
  * @augments ROT.Path
  * @see ROT.Path
  */
-export default class Dijkstra extends Path {
+export class Dijkstra extends Path {
 	_computed: {[key:string]: Item}; 
 	_todo: Item[];
 

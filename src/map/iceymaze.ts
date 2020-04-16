@@ -1,11 +1,11 @@
-import Map, { CreateCallback } from "./map.js";
-import RNG from "../rng.js";
+import { Map, CreateCallback } from "./map";
+import { RNG } from "../rng";
 
 /**
  * Icey's Maze generator
  * See http://www.roguebasin.roguelikedevelopment.org/index.php?title=Simple_maze for explanation
  */
-export default class IceyMaze extends Map {
+export class IceyMaze extends Map {
 	_regularity: number;
 	_map: number[][];
 

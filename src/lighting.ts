@@ -1,5 +1,5 @@
-import FOV from "./fov/fov.js";
-import * as Color from "./color.js";
+import { FOV } from "./fov/fov";
+import * as Color from "./color";
 
 type LightColor = [number, number, number];
 
@@ -24,7 +24,7 @@ interface Options {
 /**
  * Lighting computation, based on a traditional FOV for multiple light sources and multiple passes.
  */
-export default class Lighting {
+export class Lighting {
 	private _reflectivityCallback: ReflectivityCallback;
 	private _options!: Options;
 	private _fov!: FOV;

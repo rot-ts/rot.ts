@@ -1,9 +1,9 @@
-import { CreateCallback } from "./map.js";
-import Dungeon from "./dungeon.js";
-import { Room, Corridor, FeatureConstructor } from "./features.js";
+import { CreateCallback } from "./map";
+import { Dungeon } from "./dungeon";
+import { Room, Corridor, FeatureConstructor } from "./features";
 
-import RNG from "../rng.js";
-import { DIRS } from "../constants.js";
+import { RNG } from "../rng";
+import { DIRS } from "../constants";
 
 type FeatureType = "room" | "corridor";
 const FEATURES = {
@@ -24,7 +24,7 @@ interface Options {
  * Heavily based on Mike Anderson's ideas from the "Tyrant" algo, mentioned at 
  * http://www.roguebasin.roguelikedevelopment.org/index.php?title=Dungeon-Building_Algorithm.
  */
-export default class Digger extends Dungeon {
+export class Digger extends Dungeon {
 	_options: Options;
 	_featureAttempts: number;
 	_map: number[][];

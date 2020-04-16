@@ -1,12 +1,12 @@
-import Backend from "./backend.js";
-import { DisplayOptions, DisplayData } from "./types.js";
-import * as Color from "../color.js";
+import { Backend } from "./backend";
+import { DisplayOptions, DisplayData } from "./types";
+import * as Color from "../color";
 
 /**
  * @class Tile backend
  * @private
  */
-export default class TileGL extends Backend {
+export class TileGL extends Backend {
 	_gl!: WebGLRenderingContext;
 	_program!: WebGLProgram;
 	_uniforms: {[key:string]: WebGLUniformLocation | null};
@@ -26,7 +26,7 @@ export default class TileGL extends Backend {
 	}
 
 	schedule(cb: () => void) { requestAnimationFrame(cb); }
-	getContainer() { return this._gl.canvas; }
+	getContainer() { return this._gl.canvas as HTMLElement; }
 
 	setOptions(opts: DisplayOptions) {
 		super.setOptions(opts);
@@ -147,7 +147,7 @@ export default class TileGL extends Backend {
 	}
 
 	eventToPosition(x: number, y: number): [number, number] {
-		let canvas = this._gl.canvas;
+		let canvas = this._gl.canvas as HTMLCanvasElement;
 		let rect = canvas.getBoundingClientRect();
 		x -= rect.left;
 		y -= rect.top;

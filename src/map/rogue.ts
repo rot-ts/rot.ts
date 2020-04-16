@@ -1,6 +1,6 @@
-import Map, { CreateCallback } from "./map.js";
-import RNG from "../rng.js";
-import { DIRS } from "../constants.js";
+import { Map, CreateCallback } from "./map";
+import { RNG } from "../rng";
+import { DIRS } from "../constants";
 
 type Point = [number, number];
 
@@ -33,7 +33,7 @@ export interface Room {
  * Dungeon generator which uses the "orginal" Rogue dungeon generation algorithm. See http://kuoi.com/~kamikaze/GameDesign/art07_rogue_dungeon.php
  * @author hyakugei
  */
-export default class Rogue extends Map {
+export class Rogue extends Map {
 	private _options: Options;
 	private map: number[][] = [];
 	private rooms: Room[][] = [];

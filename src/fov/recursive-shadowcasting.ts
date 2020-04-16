@@ -1,4 +1,4 @@
-import FOV, { VisibilityCallback } from "./fov.js";
+import { FOV, VisibilityCallback } from "./fov";
 
 /** Octants used for translating recursive shadowcasting offsets */
 const OCTANTS = [
@@ -18,7 +18,7 @@ const OCTANTS = [
  * Based on Peter Harkins' implementation of Björn Bergström's algorithm described here: http://www.roguebasin.com/index.php?title=FOV_using_recursive_shadowcasting
  * @augments ROT.FOV
  */
-export default class RecursiveShadowcasting extends FOV {
+export class RecursiveShadowcasting extends FOV {
 	/**
 	 * Compute visibility for a 360-degree circle
 	 * @param {int} x

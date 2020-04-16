@@ -1,4 +1,4 @@
-import FOV, { VisibilityCallback } from "./fov.js";
+import { FOV, VisibilityCallback } from "./fov";
 
 type Arc = [number, number];
 
@@ -6,7 +6,7 @@ type Arc = [number, number];
  * @class Precise shadowcasting algorithm
  * @augments ROT.FOV
  */
-export default class PreciseShadowcasting extends FOV {
+export class PreciseShadowcasting extends FOV {
 	compute(x: number, y: number, R: number, callback: VisibilityCallback) {
 		/* this place is always visible */
 		callback(x, y, 0, 1);

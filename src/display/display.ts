@@ -1,13 +1,13 @@
-import Backend from "./backend.js";
-import Hex from "./hex.js";
-import Rect from "./rect.js";
-import Tile from "./tile.js";
-import TileGL from "./tile-gl.js";
-import Term from "./term.js";
+import { Backend } from "./backend";
+import { Hex } from "./hex";
+import { Rect } from "./rect";
+import { Tile } from "./tile";
+import { TileGL } from "./tile-gl";
+import { Term } from "./term";
 
-import * as Text from "../text.js";
-import { DisplayOptions, DisplayData } from "./types.js";
-import { DEFAULT_WIDTH, DEFAULT_HEIGHT } from "../constants.js";
+import * as Text from "../text";
+import { DisplayOptions, DisplayData } from "./types";
+import { DEFAULT_WIDTH, DEFAULT_HEIGHT } from "../constants";
 
 const BACKENDS = {
 	"hex": Hex,
@@ -40,7 +40,7 @@ const DEFAULT_OPTIONS: DisplayOptions = {
 /**
  * @class Visual map display
  */
-export default class Display {
+export class Display {
 	_data: { [pos:string] : DisplayData };
 	_dirty: boolean | { [pos: string]: boolean };
 	_options!: DisplayOptions;
@@ -93,7 +93,7 @@ export default class Display {
 		if (options.width || options.height || options.fontSize || options.fontFamily || options.spacing || options.layout) {
 			if (options.layout) {
 				let ctor = BACKENDS[options.layout];
-				this._backend = new ctor();
+				this._backend = new ctor() as Backend;
 			}
 
 			this._backend.setOptions(this._options);

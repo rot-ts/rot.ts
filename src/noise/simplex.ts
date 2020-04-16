@@ -1,6 +1,6 @@
-import Noise from "./noise.js";
-import RNG from "../rng.js";
-import { mod } from "../util.js";
+import { Noise } from "./noise";
+import { RNG } from "../rng";
+import { mod } from "../util";
 
 const F2 = 0.5 * (Math.sqrt(3) - 1);
 const G2 = (3 - Math.sqrt(3)) / 6;
@@ -13,7 +13,7 @@ const G2 = (3 - Math.sqrt(3)) / 6;
  * With Optimisations by Peter Eastman (peastman@drizzle.stanford.edu).
  * Better rank ordering method by Stefan Gustavson in 2012.
  */
-export default class Simplex extends Noise {
+export class Simplex extends Noise {
 	_gradients: number[][];
 	_indexes: number[];
 	_perms: number[];

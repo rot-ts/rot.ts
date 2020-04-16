@@ -1,10 +1,10 @@
-import { DisplayOptions, DisplayData } from "./types.js";
+import { DisplayOptions, DisplayData } from "./types";
 
 /**
  * @class Abstract display backend module
  * @private
  */
-export default abstract class Backend {
+export abstract class Backend {
 	_options!: DisplayOptions;
 
 	getContainer(): HTMLElement | null { return null; }

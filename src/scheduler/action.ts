@@ -1,10 +1,10 @@
-import Scheduler from "./scheduler.js";
+import { Scheduler } from "./scheduler";
 
 /**
  * @class Action-based scheduler
  * @augments ROT.Scheduler
  */
-export default class Action<T = any> extends Scheduler<T> {
+export class Action<T = any> extends Scheduler<T> {
 	_defaultDuration: number;
 	_duration: number;
 

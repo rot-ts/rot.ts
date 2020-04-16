@@ -1,6 +1,6 @@
-import Map, { CreateCallback } from "./map.js";
-import { DIRS } from "../constants.js";
-import RNG from "../rng.js";
+import { Map, CreateCallback } from "./map";
+import { DIRS } from "../constants";
+import { RNG } from "../rng";
 
 interface Options {
 	born: number[];
@@ -23,7 +23,7 @@ type PointMap = {[key:string]: Point};
  * @param {int[]} [options.survive] List of neighbor counts for an existing  cell to survive
  * @param {int} [options.topology] Topology 4 or 6 or 8
  */
-export default class Cellular extends Map {
+export class Cellular extends Map {
 	_options: Options;
 	_dirs: number[][];
 	_map: number[][];
