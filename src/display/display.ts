@@ -163,7 +163,7 @@ export class Display {
 	 * @param {string} [fg] foreground color
 	 * @param {string} [bg] background color
 	 */
-	draw(x: number, y: number, ch: string | string[] | null, fg: string | null, bg: string | null) {
+	draw(x: number, y: number, ch: string | string[] | null, fg?: string | null, bg?: string | null) {
 		if (!fg) { fg = this._options.fg; }
 		if (!bg) { bg = this._options.bg; }
 		let key = `${x},${y}`;

@@ -5,3 +5,4 @@ node_modules
 build/
 rot.ts.code-workspace
 src/app.ts
+docs
